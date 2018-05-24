@@ -1,0 +1,111 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+    background: #f0f0f0;
+}
+/*导航栏*/
+header{
+	display: flex;
+	justify-content: space-between;
+	background-color: #EB5757;
+}
+nav{
+	display: flex;
+	justify-content: flex-end;
+}
+a {
+    text-decoration: none;
+    position: relative;
+    padding: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+a::after {
+	content: '';
+  	position: absolute;
+  	background: #fff;
+  	height: 2px;
+  	bottom: 0;
+  	left: 0;
+  	width: 100%;
+  	transform: scaleX(0);
+  	transition: all 0.2s linear;
+}
+
+.active::after,a:hover::after {
+  	transform: scaleX(1);
+}
+
+
+/*主体*/
+li{
+	width:220px;     
+	height:190px;      
+	
+}
+ul{     
+	margin:30px auto;
+	padding:0;
+	list-style:none;
+}
+.all{
+	width:auto;     
+	height:auto;  
+}
+.list{
+	float: left;
+	margin: 30px;
+	border-radius: 0.2em;
+  	box-shadow: 0 0 1em rgba(0,0,0,0.2);
+  	transition: all 0.2s ease;
+}
+.list:hover {
+  	box-shadow: 0 0 1.5em rgba(0,0,0,0.4);
+}
+.img_head img{
+	width:220px; 
+	height:150px;
+}
+.bottom{
+	width:220px; 
+	height:40px;
+	position: relative;
+}
+.txt{
+	margin-left: 10px;
+}
+/*点击心特效*/
+.heart {
+        background: url(all_heart.png);
+        height: 100px;
+        width: 100px;
+        float: right;
+        position: absolute;
+        left: 68%;
+        top: -35px;
+
+}
+
+@keyframes heartBlast {
+     0% {
+         background-position: left;
+     }
+     100% {
+          background-position: right;
+      }
+}
+.heartAnimation {
+          display: inline-block;
+         -webkit-animation-name: heartBlast;
+          animation-name: heartBlast;
+          -webkit-animation-duration: .8s;
+          animation-duration: .8s;
+          -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+          -webkit-animation-timing-function: steps(28);/*共28个背景图片帧*/
+          animation-timing-function: steps(28);
+      
+}
